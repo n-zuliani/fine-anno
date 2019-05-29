@@ -1,6 +1,6 @@
 import { Utenti } from './utenti.model';
 
-export const UTENTI: Utenti[] = [
+export const UTENTE: Utenti[] = [
   {
     "name": "Fabio",
     "surname": "Rossi",

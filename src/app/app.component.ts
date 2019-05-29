@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Utenti } from './utenti.model';
+import { UTENTE } from './utenti-mock';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
   users: Utenti[];
   
   constructor(){
-   this.users  = new Array <Utenti>();
+   this.users  = UTENTE;
   }
   
   
