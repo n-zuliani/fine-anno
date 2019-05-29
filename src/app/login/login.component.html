@@ -1,0 +1,12 @@
+<form [formGroup]="logForm" (ngSubmit)="onLogin()" *ngIf="show">
+    <input type="text" [formControl]="logForm.controls['username']" palceholder="username"/>
+    <div *ngIf="logForm.controls['username'].hasError('required')"
+     class="alert alert-danger">Il campo username è richiesto!
+    </div>
+    <input type="password"  [formControl]="logForm.controls['password']" palceholder="password"/>
+    <div *ngIf="logForm.controls['password'].hasError('required')"
+     class="alert alert-danger">Il campo password è richiesto!
+    </div>
+    <button type="submit">Login</button>
+</form>
+<div class="alert alert-danger" *ngIf="!correct">Username o password errati!</div>
