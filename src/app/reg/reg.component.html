@@ -1,0 +1,23 @@
+<form [formGroup]="regForm" ngSubmit="addUser()">
+    <input type="text" placeholder="Nome" [formControl]="regForm.controls['name']" />
+    <div *ngIf="myForm.controls['name'].hasError('required')"
+     class="alert alert-danger">Il campo nome è richiesto!
+    </div>
+    <input type="text" placeholder="Cognome" [formControl]="regForm.controls['surname']" />
+    <div *ngIf="myForm.controls['surname'].hasError('required')"
+     class="alert alert-danger">Il campo cognome è richiesto!
+    </div>
+    <input type="text" placeholder="Username" [formControl]="regForm.controls['username']" />
+    <div *ngIf="myForm.controls['username'].hasError('required')"
+     class="alert alert-danger">Il campo username è richiesto!
+    </div>
+    <input type="email" placeholder="Email" [formControl]="regForm.controls['email']" />
+    <div *ngIf="myForm.controls['email'].hasError('required')"
+     class="alert alert-danger">Il campo Email è richiesto!
+    </div>
+    <input type="password" placeholder="Password" [formControl]="regForm.controls['password']" />
+    <div *ngIf="myForm.controls['password'].hasError('required')"
+     class="alert alert-danger">Il campo password è richiesto!
+    </div>
+    <button type="submit">Registrati</button>
+</form>

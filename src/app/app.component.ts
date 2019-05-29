@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Utenti } from './utenti.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fine-anno';
+  
+  users: Utenti[];
+  
+  constructor(){
+   this.users  = new Array <Utenti>();
+  }
+  
+  
 }
