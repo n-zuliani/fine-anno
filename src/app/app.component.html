@@ -3,4 +3,5 @@
 <ul>
   <li *ngFor="let user of users">{{user.username}}</li>
 </ul>
-<app-login [userList]="users"></app-login>
+<app-login [userList]="users" [user]="loggedUser"></app-login>
+<app-bacheca [user]="loggedUser" [comments]="comments"></app-bacheca>

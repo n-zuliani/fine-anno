@@ -1,0 +1,12 @@
+<form [formGroup]="myForm" (ngSubmit)="addComment()">
+    <input type="text" [formControl]="myForm.controls['titolo']" placeholder="titolo" />
+    <div *ngIf="myForm.controls['titolo'].hasError('required')"
+     class="alert alert-danger">Il campo titolo è richiesto!
+    </div>
+    <button type="submit">Invia</button>
+</form>
+<ul>
+    <li *ngFor="let comm of comments">{{comm.user.username}}: {{comm.titolo}}
+     <app-bacheca [user]="user" [comments]="comm.comments"></app-bacheca>
+    </li>
+</ul>

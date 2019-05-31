@@ -10,6 +10,7 @@ import { Utenti } from '../utenti.model';
 export class LoginComponent implements OnInit {
 
   @Input() userList: Utenti[];
+  @Input() user: Utenti;
   logForm: FormGroup;
   show: boolean = true;
   correct: boolean = true;
@@ -26,15 +27,16 @@ export class LoginComponent implements OnInit {
   }
   
   onLogin(): boolean{
-    let t = 0;
+    let t = -1;
     for(let i = 0; i<this.userList.length; i++){
       if(this.logForm.controls['username'].value==this.userList[i].username && this.logForm.controls['password'].value==this.userList[i].password){
-        t = 1;
+        t = i;
       }
     }
-    if(t==1){
+    if(t!=-1){
       this.show = false;
       this.correct = true;
+      this.user = this.userList[t];
     }else{
       this.correct = false;
     }
