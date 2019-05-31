@@ -1,18 +1,18 @@
-<form [formGroup]="myForm" (ngSubmit)="addComment()">
-    <input type="text" [formControl]="myForm.controls['titolo']" placeholder="titolo" />
+<form [formGroup]="myForm" (ngSubmit)="addComment()" class="form-group">
+    <input class="form-control" type="text" [formControl]="myForm.controls['titolo']" placeholder="titolo" />
     <div *ngIf="myForm.controls['titolo'].hasError('required')"
      class="alert alert-danger">Il campo titolo è richiesto!
     </div>
-    <button type="submit">Invia</button>
+    <button type="submit" class="btn btn-primary">Invia</button>
 </form>
-<ul>
-    <li *ngFor="let comm of comments">{{comm.user.username}}: {{comm.titolo}}
-     <form [formGroup]="comForm" (ngSubmit)="addCommentToComment(comm.comments)">
-        <input type="text" [formControl]="comForm.controls['titolo']" placeholder="commento" />
-        <div *ngIf="comForm.controls['titolo'].hasError('required')"
+<ul class="jumbotron">
+    <li  *ngFor="let comm of comments">{{comm.user.username}}: {{comm.titolo}}
+     <form [formGroup]="comForm" (ngSubmit)="addCommentToComment(comm.comments)" class="form-group">
+        <input class="form-control" type="text" [formControl]="comForm.controls['comment']" placeholder="commento" />
+        <div *ngIf="comForm.controls['comment'].hasError('required')"
          class="alert alert-danger">Il campo titolo è richiesto!
         </div>
-        <button type="submit">Invia</button>
+        <button type="submit" class="btn btn-primary">Invia</button>
      </form>
      <ul>
          <li *ngFor="let c of comm.comments">{{c.user.username}} --> {{c.titolo}}</li>

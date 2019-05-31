@@ -1,23 +1,23 @@
-<form [formGroup] = "regForm" (ngSubmit)="addUser()">
-    <input type="text" placeholder="Nome" [formControl]="regForm.controls['name']" />
+<form [formGroup] = "regForm" (ngSubmit)="addUser()" class="form-group">
+    <input type="text" placeholder="Nome" [formControl]="regForm.controls['name']" class="form-control" />
     <div *ngIf="regForm.controls['name'].hasError('required')"
      class="alert alert-danger">Il campo nome è richiesto!
     </div>
-    <input type="text" placeholder="Cognome" [formControl]="regForm.controls['surname']" />
+    <input type="text" placeholder="Cognome" [formControl]="regForm.controls['surname']" class="form-control" />
     <div *ngIf="regForm.controls['surname'].hasError('required')"
      class="alert alert-danger">Il campo cognome è richiesto!
     </div>
-    <input type="text" placeholder="Username" [formControl]="regForm.controls['username']" />
+    <input type="text" placeholder="Username" [formControl]="regForm.controls['username']" class="form-control" />
     <div *ngIf="regForm.controls['username'].hasError('required')"
      class="alert alert-danger">Il campo username è richiesto!
     </div>
-    <input type="email" placeholder="Email" [formControl]="regForm.controls['email']" />
+    <input type="email" placeholder="Email" [formControl]="regForm.controls['email']" class="form-control" />
     <div *ngIf="regForm.controls['email'].hasError('required')"
      class="alert alert-danger">Il campo Email è richiesto!
     </div>
-    <input type="password" placeholder="Password" [formControl]="regForm.controls['password']" />
+    <input type="password" placeholder="Password" [formControl]="regForm.controls['password']" class="form-control" />
     <div *ngIf="regForm.controls['password'].hasError('required')"
      class="alert alert-danger">Il campo password è richiesto!
     </div>
-    <button type="submit">Registrati</button>
+    <button type="submit" class="btn btn-primary">Registrati</button>
 </form>

@@ -1,12 +1,16 @@
-<form [formGroup]="logForm" (ngSubmit)="onLogin()" *ngIf="show">
-    <input type="text" [formControl]="logForm.controls['username']" palceholder="username"/>
+<form [formGroup]="logForm" (ngSubmit)="onLogin()" *ngIf="show" class="form-group">
+    <input type="text" [formControl]="logForm.controls['username']" palceholder="username" class="form-control"/>
     <div *ngIf="logForm.controls['username'].hasError('required')"
      class="alert alert-danger">Il campo username è richiesto!
     </div>
-    <input type="password"  [formControl]="logForm.controls['password']" palceholder="password"/>
+    <input type="password"  [formControl]="logForm.controls['password']" palceholder="password" class="form-control"/>
     <div *ngIf="logForm.controls['password'].hasError('required')"
      class="alert alert-danger">Il campo password è richiesto!
     </div>
-    <button type="submit">Login</button>
+    <button type="submit" class="btn btn-primary">Login</button>
 </form>
 <div class="alert alert-danger" *ngIf="!correct">Username o password errati!</div>
+<div *ngIf="!show">
+ <button (click)="onLogout()" class="btn btn-danger">Logout</button>
+ <app-bacheca [comments]="comments" [user]="user"></app-bacheca>
+</div>

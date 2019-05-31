@@ -1,7 +1,14 @@
-<app-reg [userList]="users"></app-reg>
-<h2>Utenti registrati:</h2>
-<ul>
-  <li *ngFor="let user of users">{{user.username}}</li>
-</ul>
-<app-login [userList]="users" [user]="loggedUser"></app-login>
-<app-bacheca [comments]="comments" [user]="loggedUser"></app-bacheca>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div style="background-color: #e6e6e6">
+ <div style="padding: 5%;">
+    <app-reg [userList]="users" style="display: inline-block; width: 65%;"></app-reg>
+    <div style="display: inline-block; float: right">
+     <h2>Utenti registrati:</h2>
+     <ul class="list-group">
+      <li *ngFor="let user of users" class="list-group-item">{{user.username}}</li>
+     </ul>
+    </div>
+ </div>
+ <hr>
+ <app-login style="display: block; margin: 5%" [userList]="users" [user]="loggedUser" [comments]="comments"></app-login>
+</div>

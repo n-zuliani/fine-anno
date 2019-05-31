@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Utenti } from '../utenti.model';
+import { Comments } from '../comments.model';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { Utenti } from '../utenti.model';
 export class LoginComponent implements OnInit {
 
   @Input() userList: Utenti[];
+  @Input() comments: Comments[];
   @Input() user: Utenti;
   logForm: FormGroup;
   show: boolean = true;
@@ -44,6 +46,17 @@ export class LoginComponent implements OnInit {
     }else{
       this.correct = false;
     }
+    return false;
+  }
+  
+  onLogout(): boolean{
+    this.show = true;
+    this.user.username = "";
+    this.user.name = "";
+    this.user.surname = "";
+    this.user.email = "";
+    this.user.password = "";
+    
     return false;
   }
 

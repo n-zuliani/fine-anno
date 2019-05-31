@@ -20,7 +20,7 @@ export class BachecaComponent implements OnInit {
       'titolo': ['', Validators.required]
     });
     this.comForm = fb.group({
-      'titolo': ['', Validators.required]
+      'comment': ['', Validators.required]
     });
   }
 
@@ -38,8 +38,8 @@ export class BachecaComponent implements OnInit {
   
   addCommentToComment(comm: Comments[]): boolean{
     
-    if(this.myForm.valid){
-      comm.push(new Comments(this.comForm.controls['titolo'].value, this.user, new Array<Comments>()));
+    if(this.comForm.valid){
+      comm.push(new Comments(this.comForm.controls['comment'].value, this.user, new Array<Comments>()));
     }
     
     return false;
