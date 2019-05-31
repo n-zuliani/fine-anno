@@ -36,7 +36,11 @@ export class LoginComponent implements OnInit {
     if(t!=-1){
       this.show = false;
       this.correct = true;
-      this.user = this.userList[t];
+      this.user.username = this.userList[t].username;
+      this.user.name = this.userList[t].name;
+      this.user.surname = this.userList[t].surname;
+      this.user.email = this.userList[t].email;
+      this.user.password = this.userList[t].password;
     }else{
       this.correct = false;
     }

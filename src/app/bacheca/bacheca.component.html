@@ -7,6 +7,15 @@
 </form>
 <ul>
     <li *ngFor="let comm of comments">{{comm.user.username}}: {{comm.titolo}}
-     <app-bacheca [user]="user" [comments]="comm.comments"></app-bacheca>
+     <form [formGroup]="comForm" (ngSubmit)="addCommentToComment(comm.comments)">
+        <input type="text" [formControl]="comForm.controls['titolo']" placeholder="commento" />
+        <div *ngIf="comForm.controls['titolo'].hasError('required')"
+         class="alert alert-danger">Il campo titolo è richiesto!
+        </div>
+        <button type="submit">Invia</button>
+     </form>
+     <ul>
+         <li *ngFor="let c of comm.comments">{{c.user.username}} --> {{c.titolo}}</li>
+     </ul>
     </li>
 </ul>

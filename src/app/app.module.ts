@@ -13,7 +13,7 @@ import { BachecaComponent } from './bacheca/bacheca.component';
     AppComponent,
     RegComponent,
     LoginComponent,
-    BachecaComponent
+    BachecaComponent,
   ],
   imports: [
     BrowserModule,
